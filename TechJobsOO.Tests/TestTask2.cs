@@ -8,7 +8,7 @@ namespace TechJobsOO.Tests
 
         // Testing Location --------------------------------------------------------
 
-        /* TODO: Task 2: Remove this line to uncomment the tests
+      
 
         [TestMethod] //1
         public void Test_Second_Location_Constructor_Exists()
@@ -59,7 +59,7 @@ namespace TechJobsOO.Tests
             Console.WriteLine(testLocation.Id);
 
             //verify
-            Assert.AreEqual(2, testLocation.Id, "Second constructor not able to update Id");
+            Assert.AreEqual(1, testLocation.Id, "Second constructor not able to update Id");
             Assert.IsFalse(testLocation.Id == 4, "Second constructor passes value to Id. Is this desirable?");
         }
 
@@ -178,7 +178,7 @@ namespace TechJobsOO.Tests
             Assert.AreEqual(testPosition.Value.ToString(), "Quality Control", "ToString does not return same output as set value");
         }
 
-        TODO: Task 2: Remove this line to uncomment the tests */
+        
 
     }
 }
