@@ -36,6 +36,23 @@ namespace TechJobs.Tests
 
         }
 
+        [TestMethod]
+        public void TestJobConstructorSetsAllFields()
+        {
+           string Name="Product tester";
+           string EmployerName= "ACME";
+           string JobLocation= "Desert";
+           string JobType = "Quality control";
+           string JobCoreCompetency= "Persistence";
+
+           string message= "third constructor sets all fields";
+           Assert.AreEqual(Name, job3.Name, message);
+           Assert.AreEqual(EmployerName, job3.EmployerName.Value, message);
+           Assert.AreEqual(JobLocation, job3.EmployerLocation.Value, message);
+           Assert.AreEqual(JobType, job3.JobType.Value, message);
+           Assert.AreEqual(JobCoreCompetency, job3.JobCoreCompetency.Value, message);
+        }
+
         
     }
 }
