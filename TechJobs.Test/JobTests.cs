@@ -1,17 +1,42 @@
-﻿
+﻿using TechJobsOOAutoGraded6;
 namespace TechJobs.Tests
 {
 	[TestClass]
 	public class JobTests
 	{
         //Testing Objects
+    Job job1;
+    Job job2;
+    Job job3;
+    Job job4;
+
         //initalize your testing objects here
+        [TestInitialize]
+        public void SetUpTestData()
+        {
+            job1 = new Job();
+
+            job2 = new Job();
+
+            job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+            job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        }
 
         [TestMethod]
-        public void TestMethod()
+        public void TestSettingJobId()
         {
-            //TODO: Task 4: remove this method before you create your first test method 
+            string message1 = "job ID is properly set";
+            string message2= "job IDs differ by 1";
+
+            Assert.AreNotEqual(job1.Id, job2.Id, message1);
+
+            Assert.IsTrue(job2.Id-job1.Id==1, message2 );
+
+
         }
+
+        
     }
 }
 
