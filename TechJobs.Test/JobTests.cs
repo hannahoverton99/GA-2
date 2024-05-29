@@ -53,6 +53,12 @@ namespace TechJobs.Tests
            Assert.AreEqual(JobCoreCompetency, job3.JobCoreCompetency.Value, message);
         }
 
+        [TestMethod]
+        public void TestJobsForEquality()
+        {
+            string message="Equals() method compares jobs on id only";
+            Assert.IsFalse(Equals(job1.Id, job2.Id), message);
+        }
         
     }
 }
