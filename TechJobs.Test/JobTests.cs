@@ -1,4 +1,6 @@
-﻿using TechJobsOOAutoGraded6;
+﻿using System.Data.Common;
+using System.Reflection.Metadata.Ecma335;
+using TechJobsOOAutoGraded6;
 namespace TechJobs.Tests
 {
 	[TestClass]
@@ -56,9 +58,18 @@ namespace TechJobs.Tests
         [TestMethod]
         public void TestJobsForEquality()
         {
+            
             string message="Equals() method compares jobs on id only";
             Assert.IsFalse(Equals(job1.Id, job2.Id), message);
         }
+
+        [TestMethod]
+        public void TestToStringStartsAndEndsWithNewLine()
+       {
+            Job job= new Job();
+            string jobEntry = job.ToString();
+            Assert.IsTrue(jobEntry.Contains(Environment.NewLine+Environment.NewLine));
+       }
         
     }
 }

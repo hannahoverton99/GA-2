@@ -53,7 +53,7 @@ namespace TechJobsOOAutoGraded6
             "Employer: " + EmployerName + nl+
             "Location: " + EmployerLocation + nl +
             "Job Type: " + JobType + nl +
-            "Core Competency: " + JobCoreCompetency + nl;
+            "Core Competency: " + JobCoreCompetency + nl+nl;
         }
 
 
