@@ -11,6 +11,7 @@ namespace TechJobs.Tests
     Job job2;
     Job job3;
     Job job4;
+    Job job5;
 
         //initalize your testing objects here
         [TestInitialize]
@@ -23,6 +24,8 @@ namespace TechJobs.Tests
             job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
             job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+            job5 = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         }
 
         [TestMethod]
@@ -70,6 +73,47 @@ namespace TechJobs.Tests
             string jobEntry = job.ToString();
             Assert.IsTrue(jobEntry.Contains(Environment.NewLine+Environment.NewLine));
        }
+        
+        [TestMethod]
+        public void TestToStringContainsCorrectLabelsAndData()
+        {
+           
+           string Name="Product tester";
+           string EmployerName= "ACME";
+           string JobLocation= "Desert";
+           string JobType = "Quality control";
+           string JobCoreCompetency= "Persistence";
+
+           string expectedFormat="ID: "+ job3.Id + Environment.NewLine +
+            "Name: " + Name + Environment.NewLine+ "Employer: " + EmployerName+ Environment.NewLine + "Location: "+ JobLocation + Environment.NewLine+ "Position Type: " + JobType + Environment.NewLine+ "Core Competency: " + JobCoreCompetency + Environment.NewLine+ Environment.NewLine;
+
+           string actualFormat= job3.ToString();
+
+           string message="string should contain a label for each field, followed by the data stored in that field";
+
+           Assert.AreEqual(expectedFormat, actualFormat, message);
+
+        }
+
+        [TestMethod]
+        public void TestToStringHandlesEmptyField()
+        {
+           string Name="Product tester";
+        //    string EmployerName= "Data not available";
+           string JobLocation= "Desert";
+           string JobType = "Quality control";
+           string JobCoreCompetency= "Persistence";
+
+           string expectedFormat="ID: "+ job5.Id + Environment.NewLine +
+            "Name: "  + Name + Environment.NewLine+ "Employer: " + "Data not available" + Environment.NewLine + "Location: "+ JobLocation + Environment.NewLine+ "Position Type: " + JobType + Environment.NewLine+ "Core Competency: " + JobCoreCompetency + Environment.NewLine+ Environment.NewLine;
+
+           string actualFormat= job5.ToString();
+
+           string message="if a field is empty, the method should add, 'Data not available' after the label";
+
+           Assert.AreEqual(expectedFormat, actualFormat, message);
+
+        }
         
     }
 }
