@@ -50,7 +50,7 @@ namespace TechJobsOOAutoGraded6
         {
            string nl = Environment.NewLine;
 
-            return "ID: " + Id + nl+ 
+            return nl + "ID: " + Id + nl+ 
             "Name: " + (string.IsNullOrEmpty(Name) ? "Data not available" : Name) + 
             nl+
             "Employer: " + (EmployerName==null ||string.IsNullOrEmpty(EmployerName.Value) ? "Data not available" : EmployerName.Value) +
@@ -58,7 +58,7 @@ namespace TechJobsOOAutoGraded6
             "Location: " + (EmployerLocation == null || string.IsNullOrEmpty(EmployerLocation.Value) ? "Data not available" : EmployerLocation.Value) + nl +
             "Position Type: " + (JobType==null ||string.IsNullOrEmpty(JobType.Value) ? "Data not available" : JobType.Value) + 
             nl +
-            "Core Competency: " + (JobCoreCompetency==null || string.IsNullOrEmpty(JobCoreCompetency.Value) ? "Data not available" : JobCoreCompetency.Value) + nl+nl;
+            "Core Competency: " + (JobCoreCompetency==null || string.IsNullOrEmpty(JobCoreCompetency.Value) ? "Data not available" : JobCoreCompetency.Value) + nl;
         }
 
 

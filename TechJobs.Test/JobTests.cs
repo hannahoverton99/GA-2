@@ -71,7 +71,8 @@ namespace TechJobs.Tests
        {
             Job job= new Job();
             string jobEntry = job.ToString();
-            Assert.IsTrue(jobEntry.Contains(Environment.NewLine+Environment.NewLine));
+            Assert.IsTrue(jobEntry.StartsWith(Environment.NewLine));
+            Assert.IsTrue(jobEntry.EndsWith(Environment.NewLine));
        }
         
         [TestMethod]
@@ -84,8 +85,8 @@ namespace TechJobs.Tests
            string JobType = "Quality control";
            string JobCoreCompetency= "Persistence";
 
-           string expectedFormat="ID: "+ job3.Id + Environment.NewLine +
-            "Name: " + Name + Environment.NewLine+ "Employer: " + EmployerName+ Environment.NewLine + "Location: "+ JobLocation + Environment.NewLine+ "Position Type: " + JobType + Environment.NewLine+ "Core Competency: " + JobCoreCompetency + Environment.NewLine+ Environment.NewLine;
+           string expectedFormat=Environment.NewLine+"ID: "+ job3.Id + Environment.NewLine +
+            "Name: " + Name + Environment.NewLine+ "Employer: " + EmployerName+ Environment.NewLine + "Location: "+ JobLocation + Environment.NewLine+ "Position Type: " + JobType + Environment.NewLine+ "Core Competency: " + JobCoreCompetency + Environment.NewLine;
 
            string actualFormat= job3.ToString();
 
@@ -104,8 +105,8 @@ namespace TechJobs.Tests
            string JobType = "Quality control";
            string JobCoreCompetency= "Persistence";
 
-           string expectedFormat="ID: "+ job5.Id + Environment.NewLine +
-            "Name: "  + Name + Environment.NewLine+ "Employer: " + "Data not available" + Environment.NewLine + "Location: "+ JobLocation + Environment.NewLine+ "Position Type: " + JobType + Environment.NewLine+ "Core Competency: " + JobCoreCompetency + Environment.NewLine+ Environment.NewLine;
+           string expectedFormat=Environment.NewLine+"ID: "+ job5.Id + Environment.NewLine +
+            "Name: "  + Name + Environment.NewLine+ "Employer: " + "Data not available" + Environment.NewLine + "Location: "+ JobLocation + Environment.NewLine+ "Position Type: " + JobType + Environment.NewLine+ "Core Competency: " + JobCoreCompetency + Environment.NewLine;
 
            string actualFormat= job5.ToString();
 
